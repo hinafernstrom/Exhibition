@@ -20,7 +20,7 @@ body {
   margin: 10px; /* Add some margin */
   width: 2vw;
   justify-content: center;
-}
+} 
 
   .communalweavebutton {
     position: absolute; /* Position the button absolutely */
@@ -87,7 +87,7 @@ body {
 
 .p5canvas canvas {
   position: absolute;
-  width: 100%; /* Constrain canvas width to parent container */
+  width: 100%; /* Constrain canvas width parent container */
   height: 100%; /* Constrain canvas height to parent container */
   left: 0;
   top: 0;
