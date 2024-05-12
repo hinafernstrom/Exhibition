@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weaving is Communal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="STYLE.CSS">
+  </head>
+  <body>
+<DIV class="parentdiv"> 
+  <img src="themet.png" class="themetlogo"> 
+  <!-- <button class="communalweavebutton"> G</button>  -->
+  <!-- <button class="communalweavebutton"><span>communal Weave Gallery</span></button> -->
+  <a href="CommunalWeav.html">
+    <button class="communalweavebutton">G</button>
+  </a>
+  
+
+  
+
+<div class="navigationdiv"> 
+<div class="navcontentwrapper">
+  <p class="navtitle"> WEAVING IS COMMUNAL</p>
+    <hr> 
+      <p class="navsummary"> In Weaving Abstraction in Ancient and Modern Art, 
+      two extraordinary bodies of work separated by at least 500 years are brought 
+      together to explore the striking connections between artists of the ancient 
+      Andes and those of the 20th century.
+      </p>
+        <hr> 
+          <p class="navcolorpallet"> PICK A COLOR</p>
+            <p class="navcolorsummary">Create your own block to add to the communal tapestry. </p>
+              <div class="colorbuttonwrapper">
+                <button class="FF9DF5-button"></button>
+                <button class="F7ACEDA-button"></button>
+                <button class="F0E370-button"></button>
+                <button class="E9A453-button"></button>
+                <button class="D8DA7A-button"></button>
+                <button class="FF9D9D-button"></button>
+            </div>
+            <hr> 
+            <p class="navpaintbrush"> PAINT</p>
+            <div class="brush-container">
+              <img src="brush.svg" alt="Brush Icon" id="brush"> 
+            </div>
+            
+<!-- <div class="BRUSHcolorbuttonwrapper">
+  <button class="FF9DF5-BRUSHbutton"></button>
+  <button class="F7ACEDA-BRUSHbutton"></button>
+  <button class="F0E370-BRUSHbutton"></button>
+  <button class="E9A453-BRUSHbutton"></button>
+  <button class="D8DA7A-BRUSHbutton"></button>
+  <button class="FF9D9D-BRUSHbutton"></button>
+</div> -->
+
+            <hr>
+        <div class="submitbuttonwrapper">
+          <button class="submitbutton" id="submit-button" onclick="submitAndRedirect()"> SUBMIT</button>
+
+        </div>
+</div>
+</div>
+<div class="p5canvas" id="p5canvas">
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+  <div class="grid-cell"></div>
+    <div class="grid-cell"></div>
+</div>
+
+
+<div id="screenshot-container"></div>
+
+</div>
+</DIV>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+
+<script src="script.js"></script>
+<script src="cookie.js"></script>
+<script>
+function captureScreenshot() {
+    // Get the target div element
+    var element = document.getElementById("p5canvas");
+
+    // Use html2canvas to capture the screenshot
+    html2canvas(element).then(function(canvas) {
+        // Convert the canvas to a data URL and display it on the page
+        var imgData = canvas.toDataURL();
+        var img = new Image();
+        img.src = imgData;
+
+        // Append the captured image to the document body
+        var container = document.getElementById("screenshot-container");
+        container.innerHTML = ''; // Clear previous content
+        container.appendChild(img);
+    });
+}
+
+function submitAndRedirect() {
+    captureScreenshot();
+    // Define your logic here for submitting the form and redirecting
+    // For example:
+    // document.getElementById("myForm").submit();
+    // window.location.href = "https://example.com";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to capture canvas image
+    function captureCanvasImage() {
+        var canvas = document.getElementById("defaultCanvas0");
+        if (!canvas) {
+            console.error("Canvas element not found.");
+            return;
+        }
+        var imgData = canvas.toDataURL("image/png");
+        console.log("Image Data URL:", imgData);
+
+        var img = new Image();
+        img.src = imgData;
+
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("canvas-image-container");
+        newDiv.appendChild(img);
+
+        document.body.appendChild(newDiv);
+    }
+
+    // Function to capture p5 canvas content
+    function captureP5CanvasContent() {
+        var p5canvasContent = document.getElementById('p5canvas').innerHTML;
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = p5canvasContent;
+
+        var svgData = new XMLSerializer().serializeToString(tempDiv.firstChild);
+        
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+
+        var img = new Image();
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img, 0, 0);
+
+            var dataURL = canvas.toDataURL();
+            console.log("Image Data URL:", dataURL);
+
+            var img = new Image();
+            img.src = dataURL;
+
+            var newDiv = document.createElement("div");
+            newDiv.classList.add("p5canvas-image-container");
+            newDiv.appendChild(img);
+
+            document.body.appendChild(newDiv);
+        };
+        img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
+    }
+
+    // Add event listener to the submit button
+    var submitButton = document.getElementById("submit-button");
+    if (submitButton) {
+        submitButton.addEventListener("click", function() {
+            captureCanvasImage();
+            captureP5CanvasContent();
+        });
+    } else {
+        console.error("Submit button not found.");
+    }
+});
+
+</script>
+  </body>
+</html>
+

@@ -1,0 +1,333 @@
+@font-face {
+  font-family: "Timezone";
+  src: url(HALTimezoneTest-MonoRegular.otf);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  margin: 0;
+  background-color: #FFF6EC;
+  font-family: "Timezone";
+}
+
+.themetlogo {
+  position: absolute; /* Position the logo absolutely */
+  top: 0;
+  left: 0; /* Align to the left */
+  margin: 10px; /* Add some margin */
+  width: 2vw;
+  justify-content: center;
+}
+
+  .communalweavebutton {
+    position: absolute; /* Position the button absolutely */
+    top: calc(2vw + 20px); /* Position below the met PNG image */
+    left: 2px; /* Set a fixed left position */
+    margin: 10px; /* Add some margin */
+    background-color: #FFF6EC;
+    border: 1px solid black;
+    border-radius: 50%; /* Make it circular */
+    font-family: "Timezone";
+    font-size: 1.2rem;
+    width: 2vw;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    overflow: hidden; /* Hide overflow */
+    transition: background-color 0.2s, color 0.2s;  /* Add transition effect */
+  }
+  .communalweavebutton:hover {
+    background-color: black;
+    color: #FFF6EC; /* Change text color when clicked */
+  }
+
+.parentdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* To add space between */
+}
+.navigationdiv {
+  width: 28vw;
+  height: 90vh;
+  border: 1px solid black; 
+  border-radius: 40px;
+  margin-left: 1vw;
+  margin-right: 14vw;
+}
+.p5canvas {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  border: .5px solid black;
+  width: 36vw; /* Adjust width as needed */
+  height: 36vw; /* Adjust height to match width */
+  position: relative; /* Ensure positioning context */
+  padding: 0;
+  z-index: 2; 
+}
+
+/* Additional styles for filled cells */
+.gridcell {
+  border: .1px solid black;
+  box-sizing: content-box;
+  position: relative; /* Ensure z-index works */
+  z-index: 1; 
+}
+
+.p5canvas div {
+  border: .1px solid black;
+  text-align: center;
+  line-height: 1; /* Reset line height to normal */
+  box-sizing: content-box;
+}
+
+.p5canvas canvas {
+  position: absolute;
+  width: 100%; /* Constrain canvas width to parent container */
+  height: 100%; /* Constrain canvas height to parent container */
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.navcontentwrapper {
+  max-width: 80%; /* Example maximum width for containment */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 10px; /* Add padding between items */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid black; /* Set the border color to black */
+  margin: 1rem 0; /* Add margin for spacing */
+}
+.navtitle,
+.navcolorpallet,
+.navpaintbrush {
+  text-align: center; /* Center the text horizontally */
+
+}
+
+.navtitle,
+.navcolorpallet,
+.navpaintbrush,
+.navcolorsummary,
+.navsummary,
+.navpaintbrush,
+.colorbuttonwrapper,
+.BRUSHcolorbuttonwrapper,
+hr{
+  margin-bottom: 3.5vh;
+}
+
+.navcolorsummary,
+.navsummary {
+  font-size: .8rem;
+}
+
+.navtitle{
+  font-size: 1.2rem;
+}
+.FF9DF5-button {
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #FF9DF5; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.F7ACEDA-button{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #7ACEDA; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.F0E370-button{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #F0E370; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.E9A453-button{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #E9A453; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.D8DA7A-button{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #D8DA7A; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.FF9D9D-button{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #FF9D9D; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.colorbuttonwrapper {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+}
+.BRUSHcolorbuttonwrapper {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+}
+.colorbuttonwrapper button {
+  width: 2.8vw;
+  height: 2.8vw;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 5px;
+  border: none;
+}
+.BRUSHcolorbuttonwrapper button {
+  width: 2.8vw;
+  height: 2.8vw;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 5px;
+  border: none;
+}
+
+.colorbuttonwrapper button:hover, .colorbuttonwrapper button.clicked {
+  border: 1px solid black; /* Add border on hover and click */
+}
+
+/* .submitbutton{
+  border-radius: 10px; 
+  border: 1px solid black;
+  background-color: #FFF6EC;
+  text-align: center;
+  font-family: "Timezone";
+  padding: .7vw;
+} */
+
+.submitbutton {
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #FFF6EC;
+  text-align: center;
+  font-family: "Timezone";
+  font-size: .8rem;
+  padding: .7vw;
+  transition: background-color 0.2s, color 0.2s; /* Add transition for smooth color change */
+}
+
+/* Hover effect */
+.submitbutton:hover {
+  background-color: black;
+  color: #FFF6EC; /* Change text color on hover */
+}
+
+/* Active (clicked) effect */
+.submitbutton:active {
+  background-color: black;
+  color: #FFF6EC; /* Change text color when clicked */
+}
+
+
+
+
+
+.brush{
+  width: 18vw;
+}
+.brush-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5vh;
+}
+.submitbuttonwrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
+.FF9DF5-BRUSHbutton {
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #FF9DF5; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.F7ACEDA-BRUSHbutton{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #7ACEDA; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.F0E370-BRUSHbutton{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #F0E370; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.E9A453-BRUSHbutton{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #E9A453; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+.D8DA7A-BRUSHbutton{
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #D8DA7A; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+  /* border: 1px solid black; */
+}
+
+.FF9D9D-BRUSHbutton {
+  width: 2.3vw; /* Adjust width as needed */
+  height: 2.3vw; /* Set height equal to width to make it square */
+  max-width: 100px; /* Add max-width to limit the size */
+  max-height: 100px; /* Add max-height to limit the size */
+  background-color: #FF9D9D; /* Set inside color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add border radius for rounded corners (optional) */
+}
